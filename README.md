@@ -1,54 +1,86 @@
 # promptdeck
 
-`promptdeck` keeps prompt experiments lightweight and reproducible.
+`promptdeck` is a Go CLI for lightweight and reproducible prompt templating.
 
-## Render one prompt
+It helps teams turn small JSON files into prompt variants and controlled experiment batches without relying on spreadsheets or heavyweight prompt platforms.
+
+## Quickstart
+
+### Install
+
+Install with your preferred method:
+
+```bash
+# From the custom tap
+brew tap itamaker/tap https://github.com/itamaker/homebrew-tap
+brew install itamaker/tap/promptdeck
+```
+
+```bash
+# Or install from source
+go install github.com/itamaker/promptdeck@latest
+```
+
+<details>
+<summary>You can also download binaries from <a href="https://github.com/itamaker/promptdeck/releases">GitHub Releases</a>.</summary>
+
+Current release archives:
+
+- macOS (Apple Silicon/arm64): `promptdeck_0.1.0_darwin_arm64.tar.gz`
+- macOS (Intel/x86_64): `promptdeck_0.1.0_darwin_amd64.tar.gz`
+- Linux (arm64): `promptdeck_0.1.0_linux_arm64.tar.gz`
+- Linux (x86_64): `promptdeck_0.1.0_linux_amd64.tar.gz`
+
+Each archive contains a single executable: `promptdeck`.
+
+</details>
+
+If the repository is still private, release-based installs require GitHub access to the repository assets.
+
+### First Run
+
+Run:
+
+```bash
+promptdeck matrix -template examples/review.tmpl -matrix examples/matrix.json
+```
+
+## Requirements
+
+- Go `1.22+`
+
+## Run
+
+Render one prompt:
 
 ```bash
 go run . render -template examples/review.tmpl -vars examples/vars.json
 ```
 
-## Render a matrix
+Render a matrix:
 
 ```bash
 go run . matrix -template examples/review.tmpl -matrix examples/matrix.json
 ```
 
-## Why it is useful
-
-- Turn small JSON files into prompt variants without spreadsheets.
-- Generate controlled experiment sets for model or prompt comparison.
-- Export prompt batches to files with `-out-dir`.
-
-## Install
-
-From source:
+## Build From Source
 
 ```bash
-go install github.com/itamaker/promptdeck@latest
+make build
 ```
-
-From Homebrew after you publish a tap formula:
 
 ```bash
-brew tap itamaker/tap https://github.com/itamaker/homebrew-tap
-brew install itamaker/tap/promptdeck
+go build -o dist/promptdeck .
 ```
 
-## Repo-Ready Files
+## What It Does
 
-- `.github/workflows/ci.yml`
-- `.github/workflows/release.yml`
-- `.goreleaser.yaml`
-- `PUBLISHING.md`
-- `scripts/render-homebrew-formula.sh`
+1. Loads Go text templates from local files.
+2. Renders one prompt from a JSON variable object or many prompts from a JSON array.
+3. Expands matrix inputs into Cartesian prompt combinations.
+4. Prints output to stdout or writes prompt batches to files.
 
-## Release
+## Notes
 
-```bash
-git tag v0.1.0
-git push origin v0.1.0
-```
-
-The tagged release workflow publishes multi-platform binaries and `checksums.txt`, which you can feed into the Homebrew formula renderer.
-The generated formula should be committed to `https://github.com/itamaker/homebrew-tap`.
+- Use `-out-dir` when you want prompt variants as individual files.
+- Maintainer release steps live in `PUBLISHING.md`.
