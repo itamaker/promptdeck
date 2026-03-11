@@ -25,7 +25,7 @@ go run . matrix -template examples/review.tmpl -matrix examples/matrix.json
 From source:
 
 ```bash
-go install github.com/YOUR_GITHUB_USER/promptdeck@latest
+go install github.com/itamaker/promptdeck@latest
 ```
 
 From Homebrew after you publish a tap formula:
