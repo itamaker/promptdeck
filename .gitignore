@@ -1,0 +1,5 @@
+dist/
+promptdeck
+*.out
+*.test
+.DS_Store
