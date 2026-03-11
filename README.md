@@ -1,8 +1,14 @@
 # promptdeck
 
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+
 `promptdeck` is a Go CLI for lightweight and reproducible prompt templating.
 
 It helps teams turn small JSON files into prompt variants and controlled experiment batches without relying on spreadsheets or heavyweight prompt platforms.
+
+## Support
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/amaker)
 
 ## Quickstart
 
@@ -84,3 +90,14 @@ go build -o dist/promptdeck .
 
 - Use `-out-dir` when you want prompt variants as individual files.
 - Maintainer release steps live in `PUBLISHING.md`.
+
+## Contributors ✨
+
+| [![itamaker][avatar-itamaker]][author-itamaker] |
+| --- |
+| [itamaker][author-itamaker] |
+
+
+
+[author-itamaker]: https://github.com/itamaker
+[avatar-itamaker]: https://images.weserv.nl/?url=https://github.com/itamaker.png&h=120&w=120&fit=cover&mask=circle&maxage=7d
