@@ -2,9 +2,9 @@
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 
-`promptdeck` is a Go CLI for lightweight and reproducible prompt templating.
+`promptdeck` is a Go CLI for rendering, batching, and optimizing prompt templates.
 
-It helps teams turn small JSON files into prompt variants and controlled experiment batches without relying on spreadsheets or heavyweight prompt platforms.
+It helps teams turn small JSON files into prompt variants, experiment manifests, and score-driven prompt rankings without relying on spreadsheets or heavyweight prompt platforms.
 
 ![promptdeck social preview](docs/images/social-preview.png)
 
@@ -25,10 +25,10 @@ brew install itamaker/tap/promptdeck
 
 Current release archives:
 
-- macOS (Apple Silicon/arm64): `promptdeck_0.1.1_darwin_arm64.tar.gz`
-- macOS (Intel/x86_64): `promptdeck_0.1.1_darwin_amd64.tar.gz`
-- Linux (arm64): `promptdeck_0.1.1_linux_arm64.tar.gz`
-- Linux (x86_64): `promptdeck_0.1.1_linux_amd64.tar.gz`
+- macOS (Apple Silicon/arm64): `promptdeck_0.2.0_darwin_arm64.tar.gz`
+- macOS (Intel/x86_64): `promptdeck_0.2.0_darwin_amd64.tar.gz`
+- Linux (arm64): `promptdeck_0.2.0_linux_arm64.tar.gz`
+- Linux (x86_64): `promptdeck_0.2.0_linux_amd64.tar.gz`
 
 Each archive contains a single executable: `promptdeck`.
 
