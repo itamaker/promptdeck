@@ -39,7 +39,21 @@ Each archive contains a single executable: `promptdeck`.
 Run:
 
 ```bash
+promptdeck
+```
+
+This launches the interactive Bubble Tea terminal UI.
+
+You can still use the direct command form:
+
+```bash
 promptdeck matrix -template examples/review.tmpl -matrix examples/matrix.json
+```
+
+Then rank variants from an experiment score file:
+
+```bash
+promptdeck optimize -template examples/review.tmpl -matrix examples/matrix.json -scores examples/scores.json
 ```
 
 ## Requirements
@@ -60,6 +74,18 @@ Render a matrix:
 go run . matrix -template examples/review.tmpl -matrix examples/matrix.json
 ```
 
+Write a manifest for later analysis:
+
+```bash
+go run . matrix -template examples/review.tmpl -matrix examples/matrix.json -manifest /tmp/prompts.json
+```
+
+Optimize prompt variants from scored runs:
+
+```bash
+go run . optimize -template examples/review.tmpl -matrix examples/matrix.json -scores examples/scores.json
+```
+
 ## Build From Source
 
 ```bash
@@ -75,7 +101,9 @@ go build -o dist/promptdeck .
 1. Loads Go text templates from local files.
 2. Renders one prompt from a JSON variable object or many prompts from a JSON array.
 3. Expands matrix inputs into Cartesian prompt combinations.
-4. Prints output to stdout or writes prompt batches to files.
+4. Emits prompt manifests for experiment tracking.
+5. Ranks prompt candidates from scored runs and reports the strongest variable settings.
+6. Prints output to stdout or writes prompt batches to files.
 
 ## Notes
 
@@ -92,3 +120,7 @@ go build -o dist/promptdeck .
 
 [author-zhaoyang]: https://github.com/itamaker
 [avatar-zhaoyang]: https://images.weserv.nl/?url=https://github.com/itamaker.png&h=120&w=120&fit=cover&mask=circle&maxage=7d
+
+## License
+
+[MIT](LICENSE)
