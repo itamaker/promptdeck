@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/jonny/current-projects/promptdeck/internal/app"
+	"github.com/itamaker/promptdeck/internal/app"
 )
 
 func main() {

@@ -1,4 +1,4 @@
-module github.com/jonny/current-projects/promptdeck
+module github.com/itamaker/promptdeck
 
 go 1.23.0
 
