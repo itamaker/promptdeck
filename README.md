@@ -110,6 +110,21 @@ go build -o dist/promptdeck .
 - Use `-out-dir` when you want prompt variants as individual files.
 - Maintainer release steps live in `PUBLISHING.md`.
 
+## Claude Code skill
+
+This repo also ships a Claude Code skill. Install standalone:
+
+```bash
+npx skills add itamaker/promptdeck-skill
+```
+
+Or via the [`itamaker/skills`](https://github.com/itamaker/skills) plugin marketplace:
+
+```text
+/plugin marketplace add itamaker/skills
+/plugin install promptdeck-skill@itamaker-skills
+```
+
 ## Contributors ✨
 
 | [![Zhaoyang Jia][avatar-zhaoyang]][author-zhaoyang] |
